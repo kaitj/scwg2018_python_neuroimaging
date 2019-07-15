@@ -1,21 +1,22 @@
 #!/bin/bash
 
-# First step is to determine whether the system is on SciNet or not
+# First step is to determine whether the system is on Graham or not
 # Check current path
 
-SCINET_REPO=/scinet/course/ss2019/3/6_mripython/
+GRAHAM_REPO=/scinet/course/ss2019/3/6_mripython/ ## UPDATE LINK
 
 #If Scinet then enter first name to create Repo
-if [ -d "$SCINET_REPO" ]; then
+if [ -d "$GRAHAM_REPO" ]; then
 
         echo "Please enter your first name (no spaces or special characters!)"
         read first_name
-        mkdir -p $HOME/$first_name/
-        git clone https://github.com/jerdra/scwg2018_python_neuroimaging.git $HOME/$first_name
-        rm -rf "$HOME/$first_name/data"
-        ln -s "$SCINET_REPO"/data $HOME/$first_name/data
+        mkdir -p /scratch/$USER/$first_name/
+        git clone https://github.com/kaitj/scwg2018_python_neuroimaging.git /scratch/$USER/$first_name
+	git checkout khanlab_tutorial
+        rm -rf "/scratch/$USER/$first_name/data"
+        ln -s "GRAHAM_REPO"/data /scratch/$USER/$first_name/data
 
-        echo "Workshop at $HOME/$first_name"
+        echo "Workshop at /scratch/$USER/$first_name/"
 
 #Otherwise we use a Binder instance
 else
