@@ -1,6 +1,6 @@
 # Scientific Computing Working Group Workshop on performing analysis of neuroimaging data in Python
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jerdra/scwg2018_python_neuroimaging/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kaitj/scwg2018_python_neuroimaging/khanlab_tutorial)
 
 ### Developed by
 - Jerry Jeyachandra (https://github.com/jerdra)
@@ -10,31 +10,27 @@
 
 ## Getting workshop material for SciNet workshops
 
-*** 
+***
 
-### If you're using SciNet's Jupyter System
-
-[Instructions with pictures](https://docs.google.com/document/d/1MyxIMtknK8In_D43--GOdBfqb25KEWX9NMzXYHoMq30/edit?usp=sharing)
+### If you're using Graham (Compute Canada)
 
 Open up a terminal and enter the following:
 ```bash
-  ssh <user>@teach.scinet.utoronto.ca
+  ssh <user>@graham.computecanada.ca
   module load anaconda3
-  source /scinet/course/ss2019/3/6_mripython/setup_workshop
-  python -m ipykernel install --user --name mripython_conda
+  source /project/rrg-akhanf/tkai/venv/neuroimaging_venv/bin/activate
+  regularJupyter
 ```
 
 Open a new terminal and enter the following:
 ```bash
-  ssh -L 8888:jupyterhub<X>:8000 <user>@teach.scinet.utoronto.ca -N
+  ssh -L 8888:<hostname:port> <user>@graham.computecanada.ca
 ```
 
-Where `<X>` is a number between 1-6. 
-
-If nothing happens that's great! Now open up your favourite browser and enter the following in your address bar:
+If this is successful, it will appear as though you have logged onto Graham. Now open up your favourite browser and enter the following in your address bar:
 
 ```
-  https://localhost:8888
+  https://localhost:8888/?token=<token>
 ```
 
 You're ready to go!
@@ -44,11 +40,11 @@ You're ready to go!
 ### If you're using Binder
 
 Click the following button:
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jerdra/scwg2018_python_neuroimaging/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kaitj/scwg2018_python_neuroimaging/khanlab_tutorial)
 
 This will open up a jupyter terminal for you. Then just hit:
 
-- **New** --> **Terminal** 
+- **New** --> **Terminal**
 
 This will open up a terminal. Once you're in here type the following:
 
@@ -66,7 +62,7 @@ Then leave it running in the background and switch tabs over back to the previou
 
 ### Getting workshop material for CAMH Workshops
 
-#### Method 1: Downloading directly from the repository 
+#### Method 1: Downloading directly from the repository
 
 On the GitHub repo (this page), click the green button that says "Clone or download", then click **Download ZIP**. Once downloaded, extract the ZIP file.
 
@@ -82,7 +78,7 @@ Once you've installed <code>git</code>, open up your terminal and do the followi
 git clone https://github.com/jerdra/scwg2018_python_neuroimaging.git
 ```
 
-This will download the repository directly into your current directory. 
+This will download the repository directly into your current directory.
 
 ### Setting up Python environment
 We use python version 3.6.0, but any newer version should also work (Python 2 versions haven't been tested). There are many methods to setting up a python environment but we'd recommend using some sort of virtual environment as to not break your system python install. Two methods (of many) are listed below:
@@ -95,8 +91,8 @@ For easy set-up we recommend [Anaconda](https://www.anaconda.com/download/) to m
 2. Open **Anaconda Navigator**
 3. Click on **Environments** on the left pane
 4. Click **Create** then type in <code>scwg2018_python_neuroimaging</code>
-5. In the <code>scwg2018_python_neuroimaging</code> entry click the play button then click **Open Terminal** 
-6. In terminal type: 
+5. In the <code>scwg2018_python_neuroimaging</code> entry click the play button then click **Open Terminal**
+6. In terminal type:
 ```
 conda install -y numpy pandas scipy scikit-learn matplotlib jupyter ipykernel nb_conda
 conda install -y -c conda-forge awscli
@@ -108,7 +104,7 @@ pip install nilearn nibabel
 
 ##### Linux and MacOS
 
-After installing Anaconda, open terminal and type: 
+After installing Anaconda, open terminal and type:
 
 ```
 cd scwg2018_python_neuroimaging
