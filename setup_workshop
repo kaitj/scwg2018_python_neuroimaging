@@ -12,6 +12,7 @@ if [ -d "$GRAHAM_REPO" ]; then
         read first_name
         mkdir -p /scratch/$USER/$first_name/
         git clone https://github.com/kaitj/scwg2018_python_neuroimaging /scratch/$USER/$first_name
+        cd /scratch/$USER/$first_name/
 	    git checkout khanlab_tutorial
         rm -rf "/scratch/$USER/$first_name/data"
         ln -s $GRAHAM_REPO/data /scratch/$USER/$first_name/data
