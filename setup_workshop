@@ -3,7 +3,7 @@
 # First step is to determine whether the system is on Graham or not
 # Check current path
 
-GRAHAM_REPO=/scinet/course/ss2019/3/6_mripython/ ## UPDATE LINK
+GRAHAM_REPO=/scratch/tkai/scwg2018_python_neuroimaging/
 
 #If Scinet then enter first name to create Repo
 if [ -d "$GRAHAM_REPO" ]; then
@@ -12,9 +12,9 @@ if [ -d "$GRAHAM_REPO" ]; then
         read first_name
         mkdir -p /scratch/$USER/$first_name/
         git clone https://github.com/kaitj/scwg2018_python_neuroimaging /scratch/$USER/$first_name
-	git checkout khanlab_tutorial
+	    git checkout khanlab_tutorial
         rm -rf "/scratch/$USER/$first_name/data"
-        ln -s "GRAHAM_REPO"/data /scratch/$USER/$first_name/data
+        ln -s $GRAHAM_REPO/data /scratch/$USER/$first_name/data
 
         echo "Workshop at /scratch/$USER/$first_name/"
 
